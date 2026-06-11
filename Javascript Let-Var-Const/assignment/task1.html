@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+
+
+// 1. Create a JavaScript function that demonstrates the use of var, let, and const inside different blocks (loops, conditions, functions).
+
+function demonstrateVariables() {
+
+    // Function Scope
+    var varVariable = "I am var";
+    let letVariable = "I am let";
+    const constVariable = "I am const";
+
+    console.log("Inside Function:");
+    console.log(varVariable);
+    console.log(letVariable);
+    console.log(constVariable);
+
+    // Conditional Block
+    if (true) {
+        var varInIf = "var inside if block";
+        let letInIf = "let inside if block";
+        const constInIf = "const inside if block";
+
+        console.log("\nInside If Block:");
+        console.log(varInIf);
+        console.log(letInIf);
+        console.log(constInIf);
+    }
+
+    console.log("\nOutside If Block:");
+    console.log(varInIf); 
+
+   
+    // Loop with var
+    for (var i = 0; i < 3; i++) {
+        console.log("var loop i =", i);
+    }
+
+    console.log("Outside var loop, i =", i); // Accessible
+
+    // Loop with let
+    for (let j = 0; j < 3; j++) {
+        console.log("let loop j =", j);
+    }
+
+    // console.log(j);
+}
+
+
+demonstrateVariables();
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+
+function getType(value) {
+    return typeof value;
+}
+
+console.log(getType(100));                // Number
+console.log(getType("Harsh"));            // String
+console.log(getType(true));               // Boolean
+console.log(getType(undefined));          // Undefined
+console.log(getType(null));               // Null (special case)
+console.log(getType(Symbol("id")));       // Symbol
+console.log(getType(123456789n));         // BigInt
+console.log(getType({ name: "Harsh" }));  // Object
+console.log(getType([1, 2, 3]));          // Array
+console.log(getType(function() {}));      // Function
+
+
+let a = 10;
+console.log(typeof a);
+
+
+
+</script>
+
+</body>
+</html>

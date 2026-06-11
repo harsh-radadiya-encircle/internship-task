@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+//1. var (Function Scope)
+var x = 5;
+console.log(x);
+
+function myfunction() {
+    var y = 10;
+    console.log(y);
+    
+}
+
+myfunction();
+
+{
+    var abc = 10;
+}
+console.log(abc);
+
+// console.log(y);
+
+
+//2. let (Block Scope)
+let a = 10;
+console.log(a); 
+
+if (true) {
+    let a = 20;
+    console.log(a);
+}
+
+console.log(a);
+
+
+
+//3. const (Block Scope)
+const b = 30;
+console.log(b);
+
+const myArray = [1, 2, 3];
+myArray.push(4);
+console.log(myArray);
+
+const user = {
+    name:"harsh",
+    age:21
+}
+
+user.age = 22;
+console.log(user);
+
+
+</script>
+
+</body>
+</html>
