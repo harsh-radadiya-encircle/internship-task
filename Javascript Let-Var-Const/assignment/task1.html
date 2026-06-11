@@ -1,64 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 1 - Var, Let and Const</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        padding:20px;
+    }
+
+  
+#output{
+    background:#f4f4f4;
+    padding:20px;
+    border-radius:10px;
+}
+
+</style>
 </head>
 <body>
-    
+
+<div class="container">
+
+    <h1>Task 1</h1>
+
+    <h3>
+        Create a JavaScript function that demonstrates the use of
+        <code>var</code>, <code>let</code>, and <code>const</code>
+        inside different blocks (loops, conditions, functions).
+    </h3>
+
+    <hr>
+
+    <h2>Output</h2>
+
+    <div id="output"></div>
+
+</div>
 
 <script>
 
+const output = document.getElementById("output");
 
-// 1. Create a JavaScript function that demonstrates the use of var, let, and const inside different blocks (loops, conditions, functions).
+function show(message){
+    output.innerHTML += message + "<br>";
+}
 
-function demonstrateVariables() {
+function demonstrateVariables(){
 
     // Function Scope
     var varVariable = "I am var";
     let letVariable = "I am let";
     const constVariable = "I am const";
 
-    console.log("Inside Function:");
-    console.log(varVariable);
-    console.log(letVariable);
-    console.log(constVariable);
+    show("<h2>Inside Function</h2>");
+    show(varVariable);
+    show(letVariable);
+    show(constVariable);
 
     // Conditional Block
-    if (true) {
+    if(true){
+
         var varInIf = "var inside if block";
         let letInIf = "let inside if block";
         const constInIf = "const inside if block";
 
-        console.log("\nInside If Block:");
-        console.log(varInIf);
-        console.log(letInIf);
-        console.log(constInIf);
+        show("<h2>Inside If Block</h2>");
+        show(varInIf);
+        show(letInIf);
+        show(constInIf);
     }
 
-    console.log("\nOutside If Block:");
-    console.log(varInIf); 
+    show("<h2>Outside If Block</h2>");
+    show(varInIf);
 
-   
-    // Loop with var
-    for (var i = 0; i < 3; i++) {
-        console.log("var loop i =", i);
+    // Var Loop
+    show("<h2>Var Loop</h2>");
+
+    for(var i = 0; i < 3; i++){
+        show("var loop i = " + i);
     }
 
-    console.log("Outside var loop, i =", i); // Accessible
+    show("Outside var loop, i = " + i);
 
-    // Loop with let
-    for (let j = 0; j < 3; j++) {
-        console.log("let loop j =", j);
+    // Let Loop
+    show("<h2>Let Loop</h2>");
+
+    for(let j = 0; j < 3; j++){
+        show("let loop j = " + j);
     }
 
-    // console.log(j);
+    show("Outside let loop, j is not accessible because let is block scoped");
 }
 
-
 demonstrateVariables();
-
 
 </script>
 

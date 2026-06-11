@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Arrays</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        padding:20px;
+    }
+
+    #output{
+        background-color:#f4f4f4;
+        padding:15px;
+        border-radius:8px;
+        line-height:1.8;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>JavaScript Arrays</h1>
+
+    <h3>
+        Introduction to Arrays, Creating Arrays, Accessing & Modifying Elements,
+        and Common Array Methods.
+    </h3>
+
+    <hr>
+
+    <div id="output"></div>
+
+</div>
+
+<script>
+
+const output = document.getElementById("output");
+
+function show(message){
+    output.innerHTML += message + "<br>";
+}
+
+// ==========================
+// 1. Introduction to Arrays
+// ==========================
+
+show("<h2>1. Introduction to Arrays</h2>");
+
+const fruits = ["Apple", "Banana", "Cherry"];
+
+show("Fruits Array : " + fruits);
+
+show("<br>");
+
+// ==========================
+// 2. Creating Arrays
+// ==========================
+
+show("<h2>2. Creating Arrays</h2>");
+
+const numbers = [1, 2, 3, 4, 5];
+const numbersArray = new Array(1, 2, 3, 4, 5);
+
+show("Literal Notation : " + numbers);
+show("Array Constructor : " + numbersArray);
+
+show("<br>");
+
+// ==========================
+// 3. Accessing and Modifying
+// ==========================
+
+show("<h2>3. Accessing and Modifying Elements</h2>");
+
+const colors = ["Red", "Green", "Blue"];
+
+show("Original Colors : " + colors);
+
+show("Element at Index 1 : " + colors[1]);
+
+colors[1] = "Yellow";
+
+show("After Modification : " + colors);
+
+show("<br>");
+
+// ==========================
+// 4. push()
+// ==========================
+
+show("<h2>4. push()</h2>");
+
+const animals1 = ["Dog", "Cat"];
+
+animals1.push("Elephant");
+
+show("After push() : " + animals1);
+
+show("<br>");
+
+// ==========================
+// 5. pop()
+// ==========================
+
+show("<h2>5. pop()</h2>");
+
+const fruits2 = ["Apple", "Banana", "Cherry"];
+
+fruits2.pop();
+
+show("After pop() : " + fruits2);
+
+show("<br>");
+
+// ==========================
+// 6. unshift()
+// ==========================
+
+show("<h2>6. unshift()</h2>");
+
+const animals2 = ["Dog", "Cat"];
+
+animals2.unshift("Lion");
+
+show("After unshift() : " + animals2);
+
+show("<br>");
+
+// ==========================
+// 7. shift()
+// ==========================
+
+show("<h2>7. shift()</h2>");
+
+const fruits3 = ["Apple", "Banana", "Cherry"];
+
+fruits3.shift();
+
+show("After shift() : " + fruits3);
+
+show("<br>");
+
+// ==========================
+// 8. splice()
+// ==========================
+
+show("<h2>8. splice()</h2>");
+
+const items1 = ["Pen", "Pencil", "Eraser"];
+
+show("Original Array : " + items1);
+
+items1.splice(1, 1);
+
+show("After splice(1,1) : " + items1);
+
+const items2 = ["Pen", "Pencil", "Eraser"];
+
+items2.splice(2, 1);
+
+show("After splice(2,1) : " + items2);
+
+show("<br>");
+
+// ==========================
+// 9. slice()
+// ==========================
+
+show("<h2>9. slice()</h2>");
+
+const items3 = ["Pen", "Pencil", "Eraser"];
+
+const newItems = items3.slice(0, 1);
+
+show("Original Array : " + items3);
+
+show("New Array using slice(0,1) : " + newItems);
+
+</script>
+
+</body>
+</html>

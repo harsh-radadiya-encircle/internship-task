@@ -1,52 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Objects and Arrays of Objects</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        #output {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+
+        }
+    </style>
+
 </head>
+
 <body>
-    
 
-<script>
+    <div class="container">
 
-// Create a single user object
-const user = {
-    name: "Harsh",
-    age: 22,
-    email: "harsh@gmail.com"
-};
+        <h1>JavaScript Objects</h1>
 
-console.log("Single User Object:");
-console.log(user);
+        <h3>
+            2. Create a JavaScript object representing a user, with
+            properties like name, age, and email. Then, create an array of multiple users and log specific properties of
+            one user.
+        </h3>
 
-// Create an array of multiple users
-const users = [
-    {
-        name: "Harsh",
-        age: 22,
-        email: "harsh@gmail.com"
-    },
-    {
-        name: "Rahul",
-        age: 25,
-        email: "rahul@gmail.com"
-    },
-    {
-        name: "Priya",
-        age: 21,
-        email: "priya@gmail.com"
-    }
-];
+        <hr>
 
+        <div id="output"></div>
 
-console.log("\nSecond User Details:");
-console.log("Name:", users[1].name);
-console.log("Age:", users[1].age);
-console.log("Email:", users[1].email);
+    </div>
 
-</script>
+    <script>
 
+        const output = document.getElementById("output");
+
+        function show(message) {
+            output.innerHTML += message + "<br>";
+        }
+
+        // Single User Object
+        const user = {
+            name: "Harsh",
+            age: 22,
+            email: "harsh@gmail.com"
+        };
+
+        show("<h2>Single User Object</h2>");
+
+        show("Name : " + user.name);
+        show("Age : " + user.age);
+        show("Email : " + user.email);
+
+        show("<br>");
+
+        // Array of Objects
+        const users = [
+            {
+                name: "Harsh",
+                age: 22,
+                email: "harsh@gmail.com"
+            },
+            {
+                name: "Rahul",
+                age: 25,
+                email: "rahul@gmail.com"
+            },
+            {
+                name: "Priya",
+                age: 21,
+                email: "priya@gmail.com"
+            }
+        ];
+
+        show("<h2>Second User Details</h2>");
+
+        show("Name : " + users[1].name);
+        show("Age : " + users[1].age);
+        show("Email : " + users[1].email);
+
+    </script>
 
 </body>
+
 </html>

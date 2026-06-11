@@ -1,47 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Type Conversion in JavaScript</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        #output {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+    </style>
+
 </head>
+
 <body>
-    
-<script>
 
-// String to Number
-let strNumber = "123";
-let num = Number(strNumber);
+    <div class="container">
 
-console.log("String:", strNumber);
-console.log("Converted Number:", num);
-console.log("Type:", typeof num);
+        <h1>JavaScript Type Conversion</h1>
 
-// Number to String
-let age = 22;
-let strAge = String(age);
+        <h3>
+            4. Try converting between types. For example, convert a string "123" to a number, or a number to a string, and
+            explain the result.
+        </h3>
 
-console.log("\nNumber:", age);
-console.log("Converted String:", strAge);
-console.log("Type:", typeof strAge);
+        <hr>
 
-// Boolean to String
-let isStudent = true;
-let strBoolean = String(isStudent);
+        <div id="output"></div>
 
-console.log("\nBoolean:", isStudent);
-console.log("Converted String:", strBoolean);
-console.log("Type:", typeof strBoolean);
+    </div>
 
-// String to Boolean
-let text = "Hello";
-let boolValue = Boolean(text);
+    <script>
 
-console.log("\nString:", text);
-console.log("Converted Boolean:", boolValue);
-console.log("Type:", typeof boolValue);
+        const output = document.getElementById("output");
 
-</script>
+        function show(message) {
+            output.innerHTML += message + "<br>";
+        }
+
+        // String to Number
+        let strNumber = "123";
+        let num = Number(strNumber);
+
+        show("<h2>String to Number</h2>");
+        show("Original Value : " + strNumber);
+        show("Original Type : " + typeof strNumber);
+        show("Converted Value : " + num);
+        show("Converted Type : " + typeof num);
+
+        show("<br>");
+
+        // Number to String
+        let age = 22;
+        let strAge = String(age);
+
+        show("<h2>Number to String</h2>");
+        show("Original Value : " + age);
+        show("Original Type : " + typeof age);
+        show("Converted Value : " + strAge);
+        show("Converted Type : " + typeof strAge);
+
+        show("<br>");
+
+        // Boolean to String
+        let isStudent = true;
+        let strBoolean = String(isStudent);
+
+        show("<h2>Boolean to String</h2>");
+        show("Original Value : " + isStudent);
+        show("Original Type : " + typeof isStudent);
+        show("Converted Value : " + strBoolean);
+        show("Converted Type : " + typeof strBoolean);
+
+        show("<br>");
+
+        // String to Boolean
+        let text = "Hello";
+        let boolValue = Boolean(text);
+
+        show("<h2>String to Boolean</h2>");
+        show("Original Value : " + text);
+        show("Original Type : " + typeof text);
+        show("Converted Value : " + boolValue);
+        show("Converted Type : " + typeof boolValue);
+
+    </script>
 
 </body>
+
 </html>

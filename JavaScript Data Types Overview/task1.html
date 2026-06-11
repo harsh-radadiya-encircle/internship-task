@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Data Types</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        padding:20px;
+    }
+
+     #output{
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+
+   
+</style>
+
 </head>
 <body>
-    
+
+<div class="container">
+
+    <h1>JavaScript Data Types</h1>
+
+    <h3>
+        1. Create variables for each primitive data type and log them using console.log()..
+    </h3>
+
+    <hr>
+
+    <div id="output"></div>
+
+</div>
+
 <script>
+
+const output = document.getElementById("output");
+
+function show(message){
+    output.innerHTML += message + "<br>";
+}
 
 // Number
 let age = 22;
@@ -30,14 +67,40 @@ let uId = Symbol("id");
 // BigInt
 let largeNumber = 1234567890123456789012345678901234567890n;
 
-// Display all values
-console.log("Number:", age);
-console.log("String:", name);
-console.log("Boolean:", isStudent);
-console.log("Undefined:", address);
-console.log("Null:", phoneNumber);
-console.log("Symbol:", uId);
-console.log("BigInt:", typeof largeNumber , '', largeNumber);
+show("<h2>Output</h2>");
+
+show("Number : " + age);
+show("Type : " + typeof age);
+
+show("<br>");
+
+show("String : " + name);
+show("Type : " + typeof name);
+
+show("<br>");
+
+show("Boolean : " + isStudent);
+show("Type : " + typeof isStudent);
+
+show("<br>");
+
+show("Undefined : " + address);
+show("Type : " + typeof address);
+
+show("<br>");
+
+show("Null : " + phoneNumber);
+show("Type : " + typeof phoneNumber);
+
+show("<br>");
+
+show("Symbol : " + uId.toString());
+show("Type : " + typeof uId);
+
+show("<br>");
+
+show("BigInt : " + largeNumber);
+show("Type : " + typeof largeNumber);
 
 </script>
 

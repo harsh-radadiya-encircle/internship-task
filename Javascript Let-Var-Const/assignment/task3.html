@@ -4,12 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Task 3 - Const Object</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+
+        #output {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
 
+    <div class="container">
+
+        <h1>Task 3</h1>
+
+        <h3>
+            Create a const object, modify its properties, and observe the behavior.
+        </h3>
+
+        <hr>
+
+        <h2>Output</h2>
+
+        <div id="output"></div>
+
+    </div>
+
     <script>
+
+        const output = document.getElementById("output");
+
+        function show(message) {
+            output.innerHTML += message + "<br>";
+        }
 
         const student = {
             name: "Harsh",
@@ -17,25 +53,30 @@
             city: "Rajkot"
         };
 
-        console.log("Before Modification:");
-        console.log(student);
+        show("<h3>Before Modification</h3>");
+        show(JSON.stringify(student));
 
         student.age = 23;
         student.city = "Ahmedabad";
 
-        console.log("After Modification:");
-        console.log(student);
+        show("<h3>After Modification</h3>");
+        show(JSON.stringify(student));
 
-        student = {
-            name: "demo",
-            age: 23,
-            city: "goa"
-        };
-        console.log(student);
-        
+        try {
+
+            student = {
+                name: "Demo",
+                age: 23,
+                city: "Goa"
+            };
+
+        } catch (error) {
+
+            show("<h3>Error</h3>");
+            show(error.message);
+        }
 
     </script>
-
 
 </body>
 

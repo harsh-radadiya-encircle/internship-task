@@ -1,35 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Type Checking using typeof</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        padding:20px;
+    }
+
+    #output{
+        background-color:#f4f4f4;
+        padding:15px;
+        border-radius:8px;
+        line-height:1.8;
+    }
+</style>
+
 </head>
 <body>
-    
+
+<div class="container">
+
+    <h1>JavaScript typeof Operator</h1>
+
+    <h3>
+        3. Write a function that takes a value and returns its type using typeof.
+    </h3>
+
+    <hr>
+
+    <div id="output"></div>
+
+</div>
+
 <script>
 
+const output = document.getElementById("output");
 
-function getType(value) {
+function show(message){
+    output.innerHTML += message + "<br>";
+}
+
+function getType(value){
     return typeof value;
 }
 
-console.log(getType(100));                // Number
-console.log(getType("Harsh"));            // String
-console.log(getType(true));               // Boolean
-console.log(getType(undefined));          // Undefined
-console.log(getType(null));               // Null (special case)
-console.log(getType(Symbol("id")));       // Symbol
-console.log(getType(123456789n));         // BigInt
-console.log(getType({ name: "Harsh" }));  // Object
-console.log(getType([1, 2, 3]));          // Array
-console.log(getType(function() {}));      // Function
+show("<h2>Output</h2>");
 
+show("100 → " + getType(100));
+show('"Harsh" → ' + getType("Harsh"));
+show("true → " + getType(true));
+show("undefined → " + getType(undefined));
+show("null → " + getType(null));
+show("Symbol('id') → " + getType(Symbol("id")));
+show("123456789n → " + getType(123456789n));
+show("{name:'Harsh'} → " + getType({name:"Harsh"}));
+show("[1,2,3] → " + getType([1,2,3]));
+show("function(){} → " + getType(function(){}));
+
+show("<br>");
 
 let a = 10;
-console.log(typeof a);
-
-
+show("typeof a = " + typeof a);
 
 </script>
 

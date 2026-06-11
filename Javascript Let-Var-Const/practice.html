@@ -3,63 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Var, Let, Const Demo</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        #output{
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+    </style>
 </head>
 <body>
-    
-<script>
 
-//1. var (Function Scope)
-var x = 5;
-console.log(x);
+    <h1>JavaScript Var, Let, Const Output</h1>
 
-function myfunction() {
-    var y = 10;
-    console.log(y);
-    
-}
+    <div id="output"></div>
 
-myfunction();
+    <script>
+        let output = document.getElementById("output");
 
-{
-    var abc = 10;
-}
-console.log(abc);
+        function show(message){
+            output.innerHTML += message + "<br>";
+        }
 
-// console.log(y);
+        // 1. var (Function Scope)
+        var x = 5;
+        show("x = " + x);
 
+        function myfunction() {
+            var y = 10;
+            show("y inside function = " + y);
+        }
 
-//2. let (Block Scope)
-let a = 10;
-console.log(a); 
+        myfunction();
 
-if (true) {
-    let a = 20;
-    console.log(a);
-}
+        {
+            var abc = 10;
+        }
 
-console.log(a);
+        show("abc = " + abc);
 
+        // 2. let (Block Scope)
+        let a = 10;
+        show("a before block = " + a);
 
+        if (true) {
+            let a = 20;
+            show("a inside block = " + a);
+        }
 
-//3. const (Block Scope)
-const b = 30;
-console.log(b);
+        show("a after block = " + a);
 
-const myArray = [1, 2, 3];
-myArray.push(4);
-console.log(myArray);
+        // 3. const (Block Scope)
+        const b = 30;
+        show("b = " + b);
 
-const user = {
-    name:"harsh",
-    age:21
-}
+        const myArray = [1, 2, 3];
+        myArray.push(4);
+        show("myArray = " + myArray);
 
-user.age = 22;
-console.log(user);
+        const user = {
+            name: "harsh",
+            age: 21
+        };
 
-
-</script>
+        user.age = 22;
+        show("user = " + JSON.stringify(user));
+    </script>
 
 </body>
 </html>

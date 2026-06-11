@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 2 - Var Hoisting</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    padding:20px;
+}
+
+#output{
+    background:#f4f4f4;
+    padding:20px;
+    border-radius:10px;
+}
+</style>
+
 </head>
 <body>
-    
 
+<h1>Task 2: Write a JavaScript program that attempts to use a var-declared variable before its declaration.</h1>
 
+<div id="output"></div>
 
-    <script>
+<script>
 
+const output = document.getElementById("output");
 
+function show(message){
+    output.innerHTML += message + "<br>";
+}
 
-console.log(myVariable);
+// Access variable before declaration
+show("Before Declaration: " + myVariable);
 
 var myVariable = 100;
 
-console.log(myVariable);
+// Access variable after declaration
+show("After Declaration: " + myVariable);
 
-    </script>
-
+</script>
 
 </body>
 </html>
