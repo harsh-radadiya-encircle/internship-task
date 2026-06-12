@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+        #output{
+            padding:15px;
+            border-radius: 8px;
+            background-color: #f4f4f4;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Task 5</h1>
+        <h3>Write a forEach loop to calculate and print the total price of items in the array: const prices = [10, 20,
+            30, 40];</h3>
+
+            <div id="output"></div>
+    </div>
+
+<script>
+
+const output = document.getElementById("output");
+
+function show(message){
+    output.innerHTML += message + "<br>";
+}
+
+const prices = [10,20,30,40];
+
+let ans = 0;
+prices.forEach((data,idx)=>{
+    ans += data;
+})
+
+show(`Total Price of item : ${ans}`);
+
+</script>
+
+</body>
+
+</html>

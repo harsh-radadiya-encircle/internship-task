@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
+    }
+    #output{
+        background-color: #f4f4f4;
+        padding: 15px;
+        border-radius: 8px;
+    }
+</style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Task 3</h1>
+        <h3>Given an array of strings ["red", "green", "blue"], write a for...of the loop to print each color in
+            uppercase.</h3>
+
+            <div id="output"></div>
+
+    </div>
+
+<script>
+
+const output = document.getElementById("output");
+
+function show(message){
+    output.innerHTML += message + "<br>";
+}
+
+const array = ["red","green","blue"];
+
+for(const data of array){
+    show("Before String is = " + data);
+    show("After String is = " + data.toUpperCase());
+    show("<br>");
+}
+
+</script>
+
+</body>
+
+</html>

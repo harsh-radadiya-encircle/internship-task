@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+
+        #output {
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            padding: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Task 4</h1>
+        <h3>Given an array of numbers [1, 2, 3, 4], use map() to create a new array where each number is doubled.</h3>
+
+
+        <div id="output"></div>
+    </div>
+
+
+    <script>
+
+        const output = document.getElementById("output");
+
+        function show(message) {
+            output.innerHTML += message + "<br>";
+        }
+
+        const number = [1, 2, 3, 4];
+        show(`Old Array : ${number}`)
+        const doubleNum = number.map((num) => {
+            return num * 2;
+        })
+        show("<br>");
+        show(`New Array : ${doubleNum}`);
+
+    </script>
+
+</body>
+
+</html>

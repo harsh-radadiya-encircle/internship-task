@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Loops</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        padding:20px;
+    }
+
+    #output{
+        background-color:#f4f4f4;
+        padding:15px;
+        border-radius:8px;
+        line-height:1.8;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>JavaScript Loops & Array Methods</h1>
+
+    <h3>
+        Demonstration of for loop, nested loop, break, continue,
+        for...of, for...in, forEach(), map(), filter(), and reduce().
+    </h3>
+
+    <hr>
+
+    <div id="output"></div>
+
+</div>
+
+<script>
+
+const output = document.getElementById("output");
+
+function show(message){
+    output.innerHTML += message + "<br>";
+}
+
+// ====================================
+// Simple For Loop
+// ====================================
+
+show("<h2>1. Simple For Loop</h2>");
+
+for(let i = 1; i <= 10; i++){
+    show(i);
+}
+
+show("<br>");
+
+// ====================================
+// Array with For Loop
+// ====================================
+
+show("<h2>2. Array with For Loop</h2>");
+
+const fruits = ["Apple", "Banana", "Cherry"];
+
+let text = "";
+
+for(let i = 0; i < fruits.length; i++){
+    text += fruits[i] + ", ";
+    show(fruits[i]);
+}
+
+show("Combined Text : " + text);
+
+show("<br>");
+
+// ====================================
+// Nested Loop
+// ====================================
+
+show("<h2>3. Nested Loop</h2>");
+
+for(let i = 1; i <= 5; i++){
+    for(let j = 1; j <= i; j++){
+        show(`i: ${i}, j: ${j}`);
+    }
+}
+
+show("<br>");
+
+// ====================================
+// Break
+// ====================================
+
+show("<h2>4. Break Statement</h2>");
+
+for(let i = 1; i <= 10; i++){
+    if(i == 5){
+        break;
+    }
+    show(i);
+}
+
+show("<br>");
+
+// ====================================
+// Continue
+// ====================================
+
+show("<h2>5. Continue Statement</h2>");
+
+for(let i = 1; i <= 10; i++){
+    if(i == 5){
+        continue;
+    }
+    show(i);
+}
+
+show("<br>");
+
+// ====================================
+// For...of
+// ====================================
+
+show("<h2>6. for...of Loop</h2>");
+
+const fruit = ["Apple", "Banana", "Cherry"];
+
+for(const data of fruit){
+    show(data);
+}
+
+show("<br>");
+
+// ====================================
+// for...of String
+// ====================================
+
+show("<h2>7. for...of with String</h2>");
+
+const word = "Hello";
+
+let txt = "";
+
+for(const data of word){
+    txt += data + " ";
+    show(data);
+}
+
+show("Combined Text : " + txt);
+
+show("<br>");
+
+// ====================================
+// for...in
+// ====================================
+
+show("<h2>8. for...in Loop</h2>");
+
+const user = {
+    name:"Harsh",
+    age:22,
+    email:"h@gmail.com"
+};
+
+for(const key in user){
+    show(`${key} : ${user[key]}`);
+}
+
+show("<br>");
+
+// ====================================
+// forEach()
+// ====================================
+
+show("<h2>9. forEach()</h2>");
+
+const numbers = [1,2,3,4,5];
+
+numbers.forEach((num, idx)=>{
+    show(`Index: ${idx}, Value: ${num}`);
+});
+
+show("<br>");
+
+// ====================================
+// map()
+// ====================================
+
+show("<h2>10. map()</h2>");
+
+const numMap = [1,2,3,4,5];
+
+numMap.map((data)=>{
+    show(data * 2);
+});
+
+show("<br>");
+
+// ====================================
+// filter()
+// ====================================
+
+show("<h2>11. filter()</h2>");
+
+const age = [15,18,22,25];
+
+const adult = age.filter((data)=>{
+    return data >= 18;
+});
+
+show("Adults : " + adult);
+
+show("<br>");
+
+// ====================================
+// reduce()
+// ====================================
+
+show("<h2>12. reduce()</h2>");
+
+const num = [1,2,3,4,5];
+
+const sum = num.reduce((acc, curr)=>{
+    return acc + curr;
+}, 0);
+
+show("Sum : " + sum);
+
+</script>
+
+</body>
+</html>

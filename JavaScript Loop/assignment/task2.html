@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+        #output{
+            background-color: #f4f4f4;
+            padding:15px;
+            border-radius:8px;
+        }
+    </style>
+
+</head>
+<body>
+    
+<div class="container">
+
+<h1>Task 2</h1>
+
+<h3>Write a nested for loop to generate a multiplication table from 1 to 5.</h3>
+
+<div id="output"></div>
+
+</div>
+
+<script>
+
+const output = document.getElementById("output");
+
+function show(message){
+    output.innerHTML += message + "<br>";
+}
+
+for(let i=1; i<=5; i++){
+    for(let j=1; j<=10; j++){
+        show(`${i} * ${j} = ${i*j}`);
+    }
+    show("<br>");
+}
+
+</script>
+
+</body>
+</html>
