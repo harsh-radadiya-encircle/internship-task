@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+        #output{
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="container">
+
+<h1>7. Anonymous Functions:</h1>
+
+<h3>Use an anonymous function to log a message to the console after 2 seconds.</h3>
+
+<div id="output"></div>
+
+</div>
+
+<script>
+
+const output = document.getElementById("output");
+
+function show(message){
+    output.innerHTML += message + "<br>";
+}
+
+setTimeout(() => {
+    show("Anonymous Called");
+}, 2000);
+
+
+</script>
+
+</body>
+</html>

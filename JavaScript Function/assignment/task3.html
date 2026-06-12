@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+        #output{
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="container">
+
+<h1>3. Arrow Functions:</h1>
+
+<h3>Create an arrow function called square that takes a number and returns its square.</h3>
+
+<div id="output"></div>
+
+</div>
+
+<script>
+
+const output = document.getElementById("output");
+
+function show(message){
+    output.innerHTML += message + "<br>";
+}
+
+const square = (num)=>{
+    show(`The number is : ${num}`);
+    return num*num;
+}
+show(`Square : ${square(10)}`);
+
+
+</script>
+
+</body>
+</html>

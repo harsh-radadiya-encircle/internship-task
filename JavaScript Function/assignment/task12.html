@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+
+        #output {
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>12. Promises</h1>
+
+        <h3>Create a checkStock function that returns a promise. Resolve it with "Stock Available" if the quantity is
+            above 0, and reject it with "Out of Stock" otherwise.</h3>
+
+        <div id="output"></div>
+
+    </div>
+
+    <script>
+
+        const output = document.getElementById("output");
+
+        function show(message) {
+            output.innerHTML += message + "<br>";
+        }
+
+        function checkStock(quentity) {
+            show(`Stock Quentity : ${quentity} <br>`);
+            return new Promise((resolve, reject) => {
+                if (quentity > 0) {
+                    resolve("Stock Available" + "<br>");
+                } else {
+                    reject("Out of Stock");
+                }
+            })
+        }
+
+        checkStock(10)
+            .then((message) => {
+                show(message);
+            })
+            .catch((error) => {
+                show(error);
+            })
+
+
+        checkStock(0)
+            .then((message) => {
+                show(message);
+            })
+            .catch((error) => {
+                show(error);
+            })
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+
+        #output {
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+
+
+        <h1>2. Function Expression:</h1>
+
+        <h3>Create a function expression named divide that accepts two numbers and returns their division. If the second
+            number is 0, return undefined.</h3>
+
+        <div id="output"></div>
+
+    </div>
+
+    <script>
+
+        const output = document.getElementById("output");
+
+        function show(message) {
+            output.innerHTML += message + "<br>";
+        }
+
+const divider = function(a,b){
+    show(`First Number : ${a} Second Number is : ${b}`);
+    if(a>0 && b>0){
+        return a/b;
+    }else if(b===0){
+        return undefined;
+    }else{
+        return "please do not add 0 as a value."
+    }
+}
+show(divider(10,20) + "<br>");
+show(divider(10,0) + "<br>");
+show(divider(0,10) + "<br>");
+
+    </script>
+
+</body>
+
+</html>

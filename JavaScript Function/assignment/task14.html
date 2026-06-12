@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+
+        #output {
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>14. Practical Real-World Example</h1>
+
+        <h3>Write an async function to fetch data from https://jsonplaceholder.typicode.com/users. Print each user's
+            name and email.</h3>
+
+        <div id="output"></div>
+
+    </div>
+
+    <script>
+
+        const output = document.getElementById("output");
+
+        function show(message) {
+            output.innerHTML += message + "<br>";
+        }
+
+
+        async function fetchUserDetails() {
+            try {
+                const res = await fetch("https://jsonplaceholder.typicode.com/users");
+                const data = await res.json();
+                data.forEach((data)=>{
+                    show(`ID : ${data.id}`);
+                    show(`Name : ${data.name}`);
+                    show(`Email : ${data.email}<br>`);
+                })
+
+            } catch (error) {
+                show(error);
+            }
+        }
+fetchUserDetails();
+
+    </script>
+
+</body>
+
+</html>

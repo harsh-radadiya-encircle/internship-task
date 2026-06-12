@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+        #output{
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="container">
+
+<h1>5. Return Statement:</h1>
+<h3>Create a function findMax that returns the largest of three numbers.</h3>
+
+<div id="output"></div>
+
+</div>
+
+<script>
+
+const output = document.getElementById("output");
+
+function show(message){
+    output.innerHTML += message + "<br>";
+}
+
+function findMax(num1,num2,num3){
+    show(`First Number : ${num1} Second Number is : ${num2} Third Number is : ${num3}`);
+    if(num1 > num2 && num1 > num3){
+        return num1;
+    }else if(num2 > num1 && num2 > num3){
+        return num2;
+    }else if(num3 > num1 && num3 > num1){
+        return num3;
+    }else{
+        return "All Values are same";
+    }
+}
+
+show(`The Largest Number is : ${findMax(10,10,10)} <br>`);
+
+show(`The Largest Number is : ${findMax(20,10,100)} <br>`);
+
+show(`The Largest Number is : ${findMax(10,50,10)} <br>`);
+
+show(`The Largest Number is : ${findMax(100,50,70)} <br>`);
+
+</script>
+
+</body>
+</html>

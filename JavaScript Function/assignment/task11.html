@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+
+        #output {
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>11. Callback Functions</h1>
+
+        <h3>Write a performTask function that takes two callbacks: one to log "Task Started" and another to log "Task
+            Completed" after 3 seconds.</h3>
+
+        <div id="output"></div>
+
+    </div>
+
+    <script>
+
+        const output = document.getElementById("output");
+
+        function show(message) {
+            output.innerHTML += message + "<br>";
+        }
+
+        function taskStart(){
+            show("Task Started");
+        }
+        function taskCompleted(){
+            show("Task Ended");
+        }
+        function performTask(callback1,callback2){
+            callback1();
+            setTimeout(() => {
+                callback2();
+            }, 3000);
+        }
+        performTask(taskStart,taskCompleted);
+
+
+    </script>
+
+</body>
+
+</html>

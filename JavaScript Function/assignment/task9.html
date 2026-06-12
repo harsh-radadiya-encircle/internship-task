@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+
+        #output {
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>9. Rest and Spread Parameters</h1>
+
+        <h3>-Write a function findAverage that accepts any number of arguments and returns their average.
+        </h3>
+        <h3>-Use the spread operator to combine two arrays.</h3>
+
+        <div id="output"></div>
+
+    </div>
+
+    <script>
+
+        const output = document.getElementById("output");
+
+        function show(message) {
+            output.innerHTML += message + "<br>";
+        }
+
+        function findAverage(...num) {
+            show(num);
+            const sum = num.reduce((start, pre) => {
+                return start + pre;
+            }, 0)
+            return sum / num.length;
+        }
+        show("Average : " + findAverage(50, 80, 90, 70, 100));
+
+        show("<br>");
+
+        const arr1 = [1, 2, 3, 4, 5];
+        show(`Array 1 : ${arr1}`);
+        const arr2 = [...arr1, 6, 7, 8, 9, 10];
+        show(`New Array with spread Oprator : ${arr2}`);
+
+    </script>
+
+</body>
+
+</html>
