@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Practice</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript DOM Practice</h1>
+
+    <!-- getElementById -->
+    <div class="section">
+        <h2>1. getElementById()</h2>
+        <div id="greeting">Hello!</div>
+    </div>
+
+    <!-- getElementsByClassName -->
+    <div class="section">
+        <h2>2. getElementsByClassName()</h2>
+        <p class="items">Apple</p>
+        <p class="items">Banana</p>
+        <p class="items">Mango</p>
+    </div>
+
+    <!-- getElementsByTagName -->
+    <div class="section">
+        <h2>3. getElementsByTagName()</h2>
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+    </div>
+
+    <!-- remove() -->
+    <div class="section">
+        <h2>4. remove()</h2>
+        <div class="rm">First</div>
+        <div class="rm">Second</div>
+        <div class="rm">Third</div>
+    </div>
+
+    <!-- getAttribute & setAttribute -->
+    <div class="section">
+        <h2>5. getAttribute() & setAttribute()</h2>
+        <img id="img" src="" alt="Logo Testing">
+    </div>
+
+    <!-- createElement -->
+    <div class="section">
+        <h2>6. createElement() & appendChild()</h2>
+        <div id="container"></div>
+    </div>
+
+    <!-- addEventListener -->
+    <div class="section">
+        <h2>7. addEventListener()</h2>
+        <button id="btn">Click Me</button>
+    </div>
+
+    <script>
+
+        // ============================
+        // 1. getElementById()
+        // ============================
+
+        const greeting = document.getElementById("greeting");
+
+        console.log("Greeting Text:");
+        console.log(greeting.innerHTML);
+
+        greeting.innerHTML = "Welcome to JavaScript DOM!";
+
+
+        // ============================
+        // 2. getElementsByClassName()
+        // ============================
+
+        const items = document.getElementsByClassName("items");
+
+        console.log("Items:");
+
+        for (let i = 0; i < items.length; i++) {
+            console.log(items[i].innerHTML);
+        }
+
+
+        // ============================
+        // 3. getElementsByTagName()
+        // ============================
+
+        const divs = document.getElementsByTagName("div");
+
+        for (let i = 0; i < divs.length; i++) {
+            divs[i].style.backgroundColor = "#f4f4f4";
+        }
+
+
+        // ============================
+        // 4. remove()
+        // ============================
+
+        const removeItems = document.getElementsByClassName("rm");
+
+        removeItems[1].remove(); // Removes "Second"
+
+
+        // ============================
+        // 5. getAttribute() & setAttribute()
+        // ============================
+
+        const img = document.getElementById("img");
+
+        console.log("Old Alt:");
+        console.log(img.getAttribute("alt"));
+
+        img.setAttribute("alt", "New Logo Testing");
+
+        console.log("New Alt:");
+        console.log(img.getAttribute("alt"));
+
+
+        // ============================
+        // 6. createElement()
+        // ============================
+
+        const newParagraph = document.createElement("p");
+
+        newParagraph.innerText =
+            "This paragraph was created using JavaScript.";
+
+        document
+            .getElementById("container")
+            .appendChild(newParagraph);
+
+
+        // ============================
+        // 7. addEventListener()
+        // ============================
+
+        function sayHello() {
+            console.log("Hello Button Clicked!");
+            alert("Button Clicked!");
+        }
+
+        const button =
+            document.getElementById("btn");
+
+        button.addEventListener("click", sayHello);
+
+    </script>
+
+</body>
+
+</html>

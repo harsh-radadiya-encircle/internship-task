@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Practice - Manipulating Elements</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        .box {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript DOM - Manipulating Elements</h1>
+
+    <h1>4. Event Handling</h1>
+
+    <!-- 1. addEventListener() -->
+    <div class="section">
+        <h2>1. addEventListener()</h2>
+
+        <button id="btn">
+            Click Me
+        </button>
+    </div>
+
+    <!-- 2. removeEventListener() -->
+    <div class="section">
+        <h2>2. removeEventListener()</h2>
+
+        <p id="para" style="cursor: pointer;">
+            Click this paragraph
+        </p>
+    </div>
+
+    <script>
+
+
+        // ====================================
+        // 6. addEventListener()
+        // Change button text on click
+        // ====================================
+
+        const button =
+            document.getElementById("btn");
+
+        button.addEventListener(
+            "click",
+            () => {
+                button.innerHTML = "Clicked!";
+            }
+        );
+
+
+
+        // ====================================
+        // 7. removeEventListener()
+        // ====================================
+
+        function sayHello() {
+            console.log("Hello!");
+        }
+
+        const para =
+            document.getElementById("para");
+
+        para.addEventListener(
+            "click",
+            sayHello
+        );
+
+        // Immediately remove listener
+        para.removeEventListener(
+            "click",
+            sayHello
+        );
+
+    </script>
+
+</body>
+
+</html>

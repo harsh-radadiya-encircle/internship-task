@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Practice - Manipulating Elements</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        .box {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript DOM - Manipulating Elements</h1>
+
+<h1>2. Manipulating Elements</h1>
+
+    <!-- 1. Changing Content -->
+    <div class="section">
+        <h2>1. Changing Content: innerHTML</h2>
+        <p>Assignment: Create a div and change its content dynamically.</p>
+
+        <div id="changeContent">
+            Hello World
+        </div>
+    </div>
+
+    <!-- 2. Changing Attributes -->
+    <div class="section">
+        <h2>2. Changing Attributes</h2>
+        <p>Add a title attribute and change it using setAttribute().</p>
+
+        <img
+            id="img"
+            src=""
+            alt="Logo"
+            title="Image">
+    </div>
+
+    <!-- 3. Modifying Styles -->
+    <div class="section">
+        <h2>3. Modifying Styles</h2>
+
+        <p>Paragraph One</p>
+        <p>Paragraph Two</p>
+        <p>Paragraph Three</p>
+    </div>
+
+    <script>
+
+        // ====================================
+        // 1. Changing Content (innerHTML)
+        // ====================================
+
+        document.getElementById("changeContent").innerHTML =
+            "Content Changed Using innerHTML";
+
+
+
+        // ====================================
+        // 2. getAttribute() & setAttribute()
+        // ====================================
+
+        const img = document.getElementById("img");
+
+        console.log(
+            "Old Title:",
+            img.getAttribute("title")
+        );
+
+        img.setAttribute(
+            "title",
+            "New Image"
+        );
+
+        console.log(
+            "New Title:",
+            img.getAttribute("title")
+        );
+
+
+
+        // ====================================
+        // 3. Modifying Styles
+        // Change all p background colors
+        // ====================================
+
+        const paragraphs =
+            document.getElementsByTagName("p");
+
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].style.backgroundColor =
+                "lightgray";
+        }
+
+
+    </script>
+
+</body>
+
+</html>

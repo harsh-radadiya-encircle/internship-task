@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing Elements</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+
+        #message {
+            padding: 15px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+
+        <h1>1. Accessing Elements</h1>
+        <div>
+            <h1>getElementById()</h1>
+            <p>Create a webpage with an element having id="message". Use getElementById() to change its text to
+                "Welcome to
+                JavaScript DOM!"</p>
+        </div>
+
+
+        <h1 id="message">Hello World</h1>
+
+        <div>
+            <h1>getElementsByClassName()</h1>
+            <p> Create a list with multiple items having the same class name. Use getElementsByClassName() to log all
+                their text content.</p>
+        </div>
+        <ul>
+            <li class="item">apple</li>
+            <li class="item">banana</li>
+            <li class="item">mango</li>
+            <li class="item">orange</li>
+        </ul>
+        <div>
+            <h1>getElementsByTagName()</h1>
+            <p> Create three div elements. Use getElementsByTagName() to set their background color to yellow.
+            </p>
+
+            <div class="changeColor">Red</div>
+            <div class="changeColor">Yellow</div>
+            <div class="changeColor">Green</div>
+
+        </div>
+
+        <div>
+            <h1>querySelector() and querySelectorAll()</h1>
+            <p>Use querySelectorAll() to select all buttons on a page and add a red border to each.</p>
+            <div>
+                <button class="btn">click</button><button class="btn">Redirect</button><button class="btn">Stay</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        const element = document.getElementById("message");
+
+        element.innerHTML = "Welcome To JavaScript DOM";
+
+        const item = document.getElementsByClassName('item');
+        for (let i = 0; i < item.length; i++) {
+            console.log(item[i].innerHTML);
+        }
+
+        const changeColor = document.getElementsByClassName('changeColor');
+        for (let i = 0; i < changeColor.length; i++) {
+            changeColor[i].style.backgroundColor = 'yellow';
+            changeColor[i].style.marginBottom = '10px';
+        }
+
+
+        const btn = document.querySelectorAll('.btn');
+        btn.forEach((data) => {
+            data.style.border = '1px solid red';
+            data.style.backgroundColor = 'white';
+            data.style.marginRight = '10px';
+        })
+
+        
+
+
+    </script>
+
+</body>
+
+</html>

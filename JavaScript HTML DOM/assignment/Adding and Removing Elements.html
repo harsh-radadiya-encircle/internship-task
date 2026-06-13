@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Practice - Manipulating Elements</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        .box {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript DOM - Manipulating Elements</h1>
+
+ <h1>3. Adding and Removing Elements</h1>
+
+    <!-- 1. createElement() -->
+    <div class="section">
+        <h2>1. createElement() & appendChild()</h2>
+
+        <ul id="list">
+            <li>Apple</li>
+            <li>Banana</li>
+        </ul>
+    </div>
+
+    <!-- 2. remove() -->
+    <div class="section">
+        <h2>2. remove()</h2>
+
+        <div class="box">First</div>
+        <div class="box">Second</div>
+        <div class="box">Third</div>
+    </div>
+
+   
+
+    <script>
+
+
+        // ====================================
+        // 4. createElement()
+        // Add new LI element
+        // ====================================
+
+        const newItem =
+            document.createElement("li");
+
+        newItem.innerHTML = "Mango";
+
+        document
+            .getElementById("list")
+            .appendChild(newItem);
+
+
+
+        // ====================================
+        // 5. remove()
+        // Remove second box
+        // ====================================
+
+        const boxes =
+            document.getElementsByClassName("box");
+
+        boxes[1].remove();
+
+
+    </script>
+
+</body>
+
+</html>
