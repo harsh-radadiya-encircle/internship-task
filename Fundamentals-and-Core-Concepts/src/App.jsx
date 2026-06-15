@@ -64,14 +64,14 @@ function App() {
         />
 
         <Route
-  path="/routing-blog"
-  element={<RoutingBlogPost />}
-/>
+          path="/routing-blog"
+          element={<RoutingBlogPost />}
+        />
 
-<Route
-  path="/blog/:id"
-  element={<BlogDetail />}
-/>
+        <Route
+          path="/blog/:id"
+          element={<BlogDetail />}
+        />
 
       </Routes>
 
