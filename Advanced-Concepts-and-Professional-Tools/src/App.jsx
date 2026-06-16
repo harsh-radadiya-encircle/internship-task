@@ -1,29 +1,122 @@
-import React from "react";
-import ThemeAssignment from "./assignments/8-context-api/ThemeAssignment";
-import CustomHooksDemo from "./assignments/9-custom-hooks/CustomHooksDemo";
-import ReduxTodoDemo from "./assignments/10-redux-toolkit-basics/ReduxTodoDemo";
-import AsyncThunkDemo from "./assignments/11-redux-toolkit-async-thunk-middleware/AsyncThunkDemo";
-import Parent from "./assignments/12-performance-optimization/Parent";
-import MultiStepForm from "./assignments/13-formik-yup/MultiStepForm";
+import React, { lazy, Suspense } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
-function App(){
-return (
-  <>
-  
-  <ThemeAssignment />
+import Home from "./pages/Home";
+import ProtectedRoute from "./assignments/14-advanced-routing-code-splitting/ProtectedRoute";
 
-  <CustomHooksDemo />
+const ThemeAssignment = lazy(() =>
+  import("./assignments/8-context-api/ThemeAssignment")
+);
 
-  <ReduxTodoDemo />
+const CustomHooksDemo = lazy(() =>
+  import("./assignments/9-custom-hooks/CustomHooksDemo")
+);
 
-  <AsyncThunkDemo />
+const ReduxTodoDemo = lazy(() =>
+  import("./assignments/10-redux-toolkit-basics/ReduxTodoDemo")
+);
 
-  <Parent />
+const AsyncThunkDemo = lazy(() =>
+  import("./assignments/11-redux-toolkit-async-thunk-middleware/AsyncThunkDemo")
+);
 
-<MultiStepForm />
-  
-  </>
-)
+const Parent = lazy(() =>
+  import("./assignments/12-performance-optimization/Parent")
+);
+
+const MultiStepForm = lazy(() =>
+  import("./assignments/13-formik-yup/MultiStepForm")
+);
+
+const Login = lazy(() =>
+  import("./assignments/14-advanced-routing-code-splitting/Login")
+);
+
+const ProductDetails = lazy(() =>
+  import("./assignments/14-advanced-routing-code-splitting/ProductDetails")
+);
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Suspense
+  fallback={
+    <div className="min-h-screen flex items-center justify-center bg-slate-100">
+
+      <div className="bg-white p-10 rounded-3xl shadow-xl flex flex-col items-center">
+
+        <div className="w-16 h-16 border-[6px] border-slate-200 border-t-indigo-600 rounded-full animate-spin"></div>
+
+        <h2 className="mt-6 text-2xl font-bold text-slate-800">
+          Loading...
+        </h2>
+
+        <p className="text-slate-500 mt-2 text-center">
+          Please wait while we fetch the page content.
+        </p>
+
+      </div>
+
+    </div>
+  }
+>
+        <Routes>
+
+          <Route path="/" element={<Home />} />
+
+          <Route
+            path="/context-api"
+            element={<ThemeAssignment />}
+          />
+
+          <Route
+            path="/custom-hooks"
+            element={<CustomHooksDemo />}
+          />
+
+          <Route
+            path="/redux-toolkit-basics"
+            element={<ReduxTodoDemo />}
+          />
+
+          <Route
+            path="/async-thunk"
+            element={<AsyncThunkDemo />}
+          />
+
+          <Route
+            path="/performance-optimization"
+            element={<Parent />}
+          />
+
+          <Route
+            path="/formik-yup"
+            element={<MultiStepForm />}
+          />
+
+          {/* Assignment 14 */}
+          <Route
+            path="/login"
+            element={<Login />}
+          />
+
+          <Route
+            path="/product/:id"
+            element={
+              <ProtectedRoute>
+                <ProductDetails />
+              </ProtectedRoute>
+            }
+          />
+
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
+  );
 }
 
 export default App;
