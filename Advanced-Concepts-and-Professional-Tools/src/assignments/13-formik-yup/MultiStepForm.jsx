@@ -1,6 +1,3 @@
-// [MultiStepForm.jsx](file; file:///d%3A/internship-task/Advanced-Concepts-and-Professional-Tools/src/assignments/13-formik-yup/MultiStepForm.jsx)  in that file code we have so many mistake like if in 3 steps we are there so if we dont write yet still error show email is required and password is required so solve that and also when we submit the form make sure all data clear and step 1 we redirected starting so that kind of error we want to manage and also in country we write numbers so they allowed it but it cluld string write so that kind of logic error solve as well do it 
-
-
 import { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -28,7 +25,7 @@ function MultiStepForm() {
                 .required("City is required"),
 
             country: Yup.string()
-                .matches(/^[A-Za-z\s]+$/, "Country must only contain letters")
+                .matches(/^[A-Za-z\s]*$/, "Country must only contain letters")
                 .required("Country is required"),
         }),
 
@@ -52,34 +49,41 @@ function MultiStepForm() {
             email: "",
             password: "",
         },
-
         validationSchema: validationSchemas[step],
+        validateOnMount: false,
+        validateOnChange: true,
+        validateOnBlur: true,
 
         onSubmit: (values, { resetForm }) => {
             alert("Form Submitted Successfully!");
-
             console.log("Submitted Data:", values);
-            resetForm();
+            
+            // Clear all data and go back to step 1
+            resetForm({
+                values: {
+                    firstName: "",
+                    lastName: "",
+                    city: "",
+                    country: "",
+                    email: "",
+                    password: "",
+                },
+                touched: {},
+                errors: {}
+            });
             setStep(1);
         },
     });
 
     const nextStep = async () => {
-        let fieldsToTouch = { ...formik.touched };
+        let fieldsToTouch = {};
 
         if (step === 1) {
-            fieldsToTouch.firstName = true;
-            fieldsToTouch.lastName = true;
-        }
-
-        if (step === 2) {
-            fieldsToTouch.city = true;
-            fieldsToTouch.country = true;
-        }
-
-        if (step === 3) {
-            fieldsToTouch.email = true;
-            fieldsToTouch.password = true;
+            fieldsToTouch = { ...formik.touched, firstName: true, lastName: true };
+        } else if (step === 2) {
+            fieldsToTouch = { ...formik.touched, city: true, country: true };
+        } else if (step === 3) {
+            fieldsToTouch = { ...formik.touched, email: true, password: true };
         }
 
         formik.setTouched(fieldsToTouch);
@@ -90,18 +94,17 @@ function MultiStepForm() {
             (field) => errors[field]
         );
 
-        if (!currentStepHasErrors) {
+        if (!currentStepHasErrors && step < 3) {
             setStep((prev) => prev + 1);
         }
     };
 
     const prevStep = () => {
-        setStep((prev) => prev - 1);
+        setStep((prev) => Math.max(prev - 1, 1));
     };
 
     const getInputClass = (fieldName) => {
-        const hasError =
-            formik.touched[fieldName] && formik.errors[fieldName];
+        const hasError = formik.touched[fieldName] && formik.errors[fieldName];
 
         return `
     w-full px-4 py-3 rounded-xl border
@@ -230,7 +233,12 @@ function MultiStepForm() {
                                         name="country"
                                         placeholder="e.g. United States"
                                         value={formik.values.country}
-                                        onChange={formik.handleChange}
+                                        onChange={(e) => {
+                                            const val = e.target.value;
+                                            if (/^[A-Za-z\s]*$/.test(val)) {
+                                                formik.handleChange(e);
+                                            }
+                                        }}
                                         onBlur={formik.handleBlur}
                                         className={getInputClass("country")}
                                     />
