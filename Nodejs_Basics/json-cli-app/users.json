@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Harsh",
+        "age": 22,
+        "city": "Rajkot"
+    },
+    {
+        "id": 2,
+        "name": "Rahul",
+        "age": 24,
+        "city": "Ahmedabad"
+    },
+    {
+        "id": 3,
+        "name": "Priya",
+        "age": 20,
+        "city": "Surat"
+    },
+    {
+        "id": 4,
+        "name": "Meera",
+        "age": 23,
+        "city": "Vadodara"
+    }
+]
